@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author soroush
  */
-public class Admin extends User{
+public class Admin extends User {
 
     private static int i = 0;
     private User[] members = new User[100];
@@ -22,7 +22,8 @@ public class Admin extends User{
     public void uploadUserInfoFile(File file) {
 
         File f1 = new File(file.getAbsolutePath());
-        File studentBin = new File("studentInfo.bin");
+        RandomAccessFile random;
+        File studentBin = new File("guestInfo.bin");
         File guestBin = new File("guestInfo.bin");
         File masterBin = new File("master.bin");
         BufferedReader input = null;
@@ -35,14 +36,16 @@ public class Admin extends User{
                 String[] kind = line.split(",", 0);
                 if (kind[3].equalsIgnoreCase("student")) {
                     members[i] = new Student(kind[0], kind[1], kind[2], UserKind.STUDENT);
-                    
+                    members[i].write(random = new RandomAccessFile(file, line));
                 } else if (kind[3].equalsIgnoreCase("guest")) {
                     members[i] = new Guest(kind[0], kind[1], kind[2], UserKind.GUEST);
+                    members[i].write(null);
                 } else if (kind[3].equalsIgnoreCase("guest")) {
                     members[i] = new Master(kind[0], kind[1], kind[2], UserKind.MASTER);
-                    
+                    members[i].write(null);
                 }
                 i++;
+
             }
 
         } catch (IOException e) {
@@ -85,8 +88,5 @@ public class Admin extends User{
 //            }
 //        }
 //    }
-    
     ///////////////////////////////////////////////////////////////////////
-    
-
 }
