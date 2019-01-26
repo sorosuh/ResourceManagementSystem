@@ -52,39 +52,39 @@ public class Admin extends User{
     }
 
     //=============================================================
-    public void trusteeship(User user, Resources resource) {
-
-        Date trusteeshipDate = new Date();
-        user.setTrusteeshipDate(trusteeshipDate);
-
-        if (user instanceof Student) {
-
-            if (resource instanceof book) {
-                user.setReturnDate(trusteeshipDate.getHours() + 336);
-            } else if (resource instanceof Thesis) {
-                user.setReturnDate(trusteeshipDate.getHours() + 240);
-            } else if (resource instanceof Magazine) {
-                user.setReturnDate(trusteeshipDate.getHours() + 120);
-            }
-        } else if (user instanceof Master) {
-            if (resource instanceof book) {
-                user.setReturnDate(trusteeshipDate.getHours() + 750);
-            } else if (resource instanceof Thesis) {
-                user.setReturnDate(trusteeshipDate.getHours() + 480);
-            } else if (resource instanceof Magazine) {
-                user.setReturnDate(trusteeshipDate.getHours() + 360);
-            }
-        } else if (user instanceof Guest) {
-
-            if (resource instanceof book) {
-                user.setReturnDate(trusteeshipDate.getHours() + 240);
-            } else if (resource instanceof Thesis) {
-                System.out.println("you cant trusteeship this resource");
-            } else if (resource instanceof Magazine) {
-                System.out.println("you cant trusteeship this resource");
-            }
-        }
-    }
+//    public void trusteeship(User user, Resources resource) {
+//
+//        Date trusteeshipDate = new Date();
+//        user.setTrusteeshipDate(trusteeshipDate);
+//
+//        if (user instanceof Student) {
+//
+//            if (resource instanceof book) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 336);
+//            } else if (resource instanceof Thesis) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 240);
+//            } else if (resource instanceof Magazine) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 120);
+//            }
+//        } else if (user instanceof Master) {
+//            if (resource instanceof book) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 750);
+//            } else if (resource instanceof Thesis) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 480);
+//            } else if (resource instanceof Magazine) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 360);
+//            }
+//        } else if (user instanceof Guest) {
+//
+//            if (resource instanceof book) {
+//                user.setReturnDate(trusteeshipDate.getHours() + 240);
+//            } else if (resource instanceof Thesis) {
+//                System.out.println("you cant trusteeship this resource");
+//            } else if (resource instanceof Magazine) {
+//                System.out.println("you cant trusteeship this resource");
+//            }
+//        }
+//    }
     
     ///////////////////////////////////////////////////////////////////////
     

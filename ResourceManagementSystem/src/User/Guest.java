@@ -7,7 +7,7 @@ package User;
 
 /**
  *
- * @author Sina
+ * @author Soroush
  */
 public class Guest extends User{
 
